@@ -7,7 +7,9 @@ gem 'devise', '>= 1.2.0'
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem "rspec"
+  gem "sqlite3"
+  gem "rspec-rails"
+  gem "capybara", ">= 0.4.0"
   gem "yard"
   gem "cucumber", "~> 0.10"
   gem "bundler", "~> 1.0.0"
