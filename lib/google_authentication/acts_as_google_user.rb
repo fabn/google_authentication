@@ -58,12 +58,6 @@ module GoogleAuthentication
           end
         end
       end
-
-      module InstanceMethods
-        def foo_method
-          'foo'
-        end
-      end
     end
   end
 end
