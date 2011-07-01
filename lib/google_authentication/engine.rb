@@ -9,9 +9,10 @@ require 'devise'
 module GoogleAuthentication
   class Engine < Rails::Engine
 
-#    initializer "google_authentication.domain", :after => :load_config_initializers do
-#      require 'openid/store/filesystem'
-#      ::Devise.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp')#, :domain => GoogleAuthentication.domain
-#    end
+    # Initialize devise configuration for omniauth
+    initializer "google_authentication.domain", :before => "devise.omniauth" do
+      require 'openid/store/filesystem'
+      Devise.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => GoogleAuthentication.domain
+    end
   end
 end

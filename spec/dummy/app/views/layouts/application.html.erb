@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<% if current_user %>
+    <p>Currently logged in as <strong><%= current_user.email %></strong></p>
+<% else %>
+    <p>You're not logged in, <%= link_to 'Login', user_omniauth_authorize_path(:google_apps) %></p>
+<% end %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
