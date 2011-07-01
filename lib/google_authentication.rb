@@ -8,9 +8,9 @@ module GoogleAuthentication
   @@domain = "gmail.com"
 
   # model name configuration
-  mattr_accessor :model
+  mattr_accessor :model_name
   # default model used (singular name)
-  @@model = :user
+  @@model_name = :user
 
   # Allows config in initializer
   # @yield [self] Allows config in initializer using the same syntax as Devise
