@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email
+
+  # provides finder methods for retrieving users by the given omniauth
+  acts_as_google_user
+
 end

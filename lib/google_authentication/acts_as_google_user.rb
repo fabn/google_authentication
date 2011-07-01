@@ -7,12 +7,12 @@ module GoogleAuthentication
     # Configure a model to be used with devise
     # @param [Array] args a list of symbols used
     def acts_as_google_user *args
-      # foo
+      # include model methods
       include ActsAsGoogleUser::Model
     end
 
-    # Provides methods for storing google users in AR
-    module Model # :nodoc:
+    # Models method added to an AR class which calls acts_as_google_user
+    module Model
       extend ActiveSupport::Concern
 
       module ClassMethods # :nodoc:
@@ -25,6 +25,23 @@ module GoogleAuthentication
             end
             user.save!
           end
+        end
+
+        private
+
+        # default implementation of find_or_create_by_omniauth_uid
+        # find the user with the given omniauth_uid or create it
+        # assign all properties found in user_info hash to instance
+        # and return it
+        # @param [Hash] omniauth_data omniauth returned hash
+        # @return [ActiveRecord::Base] an instance of the base class
+        def find_or_create_by_omniauth_default_impl omniauth_data
+#          find_or_initialize_by_omniauth_uid(omniauth_data['uid']).tap do |user|
+#            omniauth_data['user_info'].each do |k, v|
+#              user.send "#{k}=", v if user.respond_to? "#{k}="
+#            end
+#            user.save!
+#          end
         end
       end
 
