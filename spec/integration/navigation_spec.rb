@@ -13,7 +13,7 @@ describe "Navigation" do
   end
 
   it 'should sign in and redirect with a flash message when calling callback' do
-    User.stub(:find_or_create_by_omniauth).and_return(User.new)
+    User.stub(:find_or_create_by_omniauth_impl).and_return(User.new)
     get '/users/auth/google_apps/callback'
     response.should be_redirect
     flash[:notice].should match('Google')
