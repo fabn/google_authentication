@@ -7,12 +7,18 @@ module GoogleAuthentication
   # default value for google domain used for authentication
   @@domain = "gmail.com"
 
+  # model name configuration
+  mattr_accessor :model
+  # default model used (singular name)
+  @@model = :user
+
   # Allows config in initializer
   # @yield [self] Allows config in initializer using the same syntax as Devise
   # @yieldparam [GoogleAuthentication] config the module itself
-  # @example Changing the authentication domain
+  # @example Changing the authentication setup
   #   GoogleAuthentication.setup do |config|
   #     config.domain = 'your-google-apps-domain.com'
+  #     config.model_name = :account
   #   end
   def self.setup
     yield self
