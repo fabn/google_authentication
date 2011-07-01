@@ -3,15 +3,33 @@ module GoogleAuthentication
   module ActsAsGoogleUser
 
     # Configure a model to be used with devise and google authentication
-    # @param [*args] args a list of symbols used with a devise call
-    def acts_as_google_user *args
+    # @param [Array] modules a list of symbols used with a devise call
+    def acts_as_google_user *modules
+      # assign devise modules to module variable
+      Model.devise_modules = modules unless modules.empty?
       # include model methods
       include ActsAsGoogleUser::Model
     end
 
     # Models method added to an AR class which calls acts_as_google_user
     module Model
+
+      # Devise module to include in included classes
+      mattr_accessor :devise_modules
+      # default devise modules
+      @@devise_modules = [:omniauthable]
+
       extend ActiveSupport::Concern
+
+      # send devise methods and attr_accessible to the base class
+      included do
+        # remove database authenticable if given
+        devise *(Model.devise_modules.select {|m| m != :database_authenticable})
+        # restore default value for devise_modules, don't know if needed
+        Model.devise_modules = [:omniauthable]
+        # Setup accessible (or protected) attributes for your model
+        attr_accessible :email
+      end
 
       module ClassMethods # :nodoc:
         # Find omniauth given user or create it
