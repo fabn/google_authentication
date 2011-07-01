@@ -21,3 +21,8 @@ group :development do
     gem "growl"
   end
 end
+
+group :test do
+  gem "aruba"
+  gem "generator_spec"
+end
