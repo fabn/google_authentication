@@ -25,6 +25,19 @@ module GoogleAuthentication
     yield self
   end
 
+  # Used in the routes file to decide wheter to add routes
+  # to the application
+  # @return [bool] true iff the GoogleAuthentication model is already defined
+  def self.define_routes?
+    defined?(model_name.to_s.camelize.constantize)
+  end
+
+  # Return a symbol which is used to build devise routes
+  # @return [Symbol] a symbol representing the table name used by devise
+  def self.devise_table
+    model_name.to_s.pluralize.to_sym
+  end
+
   # require the engine if rails is defined
   require 'google_authentication/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
 end
