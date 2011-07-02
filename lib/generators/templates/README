@@ -1,0 +1,13 @@
+
+===============================================================================
+
+Some setup you must do in order to make things working
+
+  1. Change your devise model name in initializer if you plan to use an existing
+     model, or if you plan to generate a model with a name which is not User
+
+  2. Change your desired domain for authentication (default gmail.com)
+
+  3. Run rails g google_authentication MODEL for creating a default model
+
+===============================================================================

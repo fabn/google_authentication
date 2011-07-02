@@ -17,7 +17,7 @@ module GoogleAuthentication
       end
 
       def show_readme
-        #readme "README"
+        readme "README" if behavior == :invoke
       end
     end
   end
