@@ -5,7 +5,8 @@ Given /^a rails application named "([^\"]*)" exists$/ do |app_name|
 end
 
 When /^this gem is installed in that application$/ do
-  Given "I append to \"Gemfile\" with \"gem 'google_autentication', :path => '../../'\""
+  gempath = File.expand_path('../../../', __FILE__)
+  Given "I append to \"Gemfile\" with \"gem 'google_autentication', :path => '#{gempath}'\""
   And "I successfully run `bundle check`"
 end
 
