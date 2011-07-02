@@ -1,6 +1,8 @@
 Given /^a rails application named "([^\"]*)" exists$/ do |app_name|
   @app_name = app_name
-  Given "I successfully run `rails new #{app_name}`"
+  Given "I successfully run `rm -rf #{app_name}`"
+  And "a directory named \"#{app_name}\" should not exist"
+  And "I successfully run `rails new #{app_name}`"
   And "I cd to \"#{app_name}\""
 end
 
