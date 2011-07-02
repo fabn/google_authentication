@@ -6,7 +6,7 @@ end
 
 When /^this gem is installed in that application$/ do
   gempath = File.expand_path('../../../', __FILE__)
-  Given "I append to \"Gemfile\" with \"gem 'google_autentication', :path => '#{gempath}'\""
+  Given "I append to \"Gemfile\" with \"gem 'google_authentication', :path => '#{gempath}'\""
   And "I successfully run `bundle check`"
 end
 

@@ -17,6 +17,7 @@ require 'rspec/expectations'
 require 'aruba/cucumber'
 
 Before do
+  #@dirs = ["/tmp/aruba"]
   # raise timeouts
   @aruba_timeout_seconds = 10
   @aruba_io_wait_seconds = 10
