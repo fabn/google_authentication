@@ -2,8 +2,8 @@ require 'rails/generators/active_record'
 require 'generators/devise/orm_helpers'
 
 module GoogleAuthentication
-  module Generators
-    class GoogleAuthenticationGenerator < ActiveRecord::Generators::Base
+  module Generators # :nodoc:
+    class GoogleAuthenticationGenerator < ActiveRecord::Generators::Base # :nodoc:
       namespace "google_authentication"
       source_root File.expand_path("../../templates", __FILE__)
 
@@ -16,14 +16,17 @@ module GoogleAuthentication
       desc "Generates a model with the given NAME with google_authentication " <<
            "configuration plus a migration file which create it."
 
+      # Generate the model without a migration file using the active_record generator
       def generate_model
         invoke "active_record:model", [name], :migration => false unless model_exists? && behavior == :invoke
       end
 
+      # Build the migration files for the given model
       def copy_devise_migration
         migration_template "migration.rb", "db/migrate/devise_create_#{table_name}"
       end
 
+      # Insert gem activation code into the selected class
       def inject_google_authentication_content
         inject_into_class(model_path, class_name) do
           return nil unless model_exists?

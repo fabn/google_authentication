@@ -7,6 +7,7 @@ require 'omniauth'
 require 'devise'
 
 module GoogleAuthentication
+  # rails engine to add controllers, routes and configuration needed to the gem
   class Engine < Rails::Engine
 
     # Initialize devise configuration for omniauth

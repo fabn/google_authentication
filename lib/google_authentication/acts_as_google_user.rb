@@ -1,5 +1,7 @@
 module GoogleAuthentication
 
+  # enclose AR methods used to give a model the ability to authenticate as a Google User
+  # using devise + omniauth combo
   module ActsAsGoogleUser
 
     # Configure a model to be used with devise and google authentication
