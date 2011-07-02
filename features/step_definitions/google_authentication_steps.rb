@@ -6,7 +6,7 @@ end
 
 When /^this gem is installed in that application$/ do
   Given "I append to \"Gemfile\" with \"gem 'google_autentication', :path => '../../'\""
-  And "I successfully run `bundle install`"
+  And "I successfully run `bundle check`"
 end
 
 When /^I generate the model with "([^\"]*)" as argument$/ do |model_name|
