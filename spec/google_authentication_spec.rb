@@ -13,6 +13,12 @@ describe GoogleAuthentication do
       GoogleAuthentication.define_routes?.should be_true
     end
 
+    it "should return true for a new class" do
+      class Car; end
+      GoogleAuthentication.stub(:model_name).and_return(:car)
+      GoogleAuthentication.define_routes?.should be_true
+    end
+
     it "should return false with non existent class" do
       GoogleAuthentication.stub(:model_name).and_return(:monster)
       GoogleAuthentication.define_routes?.should be_false
