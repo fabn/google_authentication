@@ -6,7 +6,7 @@ describe GoogleAuthentication::Generators::GoogleAuthenticationGenerator do
   include GeneratorSpec::TestCase
   destination File.expand_path("../../../tmp", __FILE__)
 
-  before(:all) do
+  before(:each) do
     prepare_destination
   end
 
