@@ -4,11 +4,27 @@ module GoogleAuthentication
   # using devise + omniauth combo
   module ActsAsGoogleUser
 
+    # Devise module to include in included classes
+    mattr_accessor :devise_modules_to_include
+    # default devise modules
+    @@devise_modules_to_include = [:omniauthable]
+
+    # Devise forbidden modules, useless in this context
+    FORBIDDEN_MODULES = [:database_authenticable, :recoverable, :registrable, :encryptable, :lockable, :validatable, :confirmable]
+
+    # Devise allowed modules
+    ALLOWED_MODULES = [:omniauthable, :token_authenticable, :trackable, :timeoutable, :rememberable]
+
     # Configure a model to be used with devise and google authentication
     # @param [Array] modules a list of symbols used with a devise call
     def acts_as_google_user *modules
       # assign devise modules to module variable
-      Model.devise_modules = modules unless modules.empty?
+      if modules.empty?
+        self.devise_modules_to_include = [:omniauthable]
+      else
+        # restrict modules given to devise
+        self.devise_modules_to_include = (modules + [:omniauthable] - FORBIDDEN_MODULES) & ALLOWED_MODULES
+      end
       # include model methods
       include ActsAsGoogleUser::Model
     end
@@ -16,19 +32,12 @@ module GoogleAuthentication
     # Models method added to an AR class which calls acts_as_google_user
     module Model
 
-      # Devise module to include in included classes
-      mattr_accessor :devise_modules
-      # default devise modules
-      @@devise_modules = [:omniauthable]
-
       extend ActiveSupport::Concern
 
       # send devise methods and attr_accessible to the base class
       included do
-        # remove database authenticable if given
-        devise *(Model.devise_modules.select {|m| m != :database_authenticable})
-        # restore default value for devise_modules, don't know if needed
-        Model.devise_modules = [:omniauthable]
+        # include devise modules
+        devise *(ActsAsGoogleUser.devise_modules_to_include)
         # Setup accessible (or protected) attributes for your model
         attr_accessible :email
       end
