@@ -29,7 +29,7 @@ module GoogleAuthentication
   # to the application
   # @return [bool] true iff the GoogleAuthentication model is already defined
   def self.define_routes?
-    defined?(model_name.to_s.camelize.constantize)
+    Object.const_defined?(model_name.to_s.camelize)
   end
 
   # Return a symbol which is used to build devise routes
