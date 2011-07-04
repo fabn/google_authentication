@@ -35,6 +35,11 @@ module GoogleAuthentication
           "  acts_as_google_user\n"
         end
       end
+
+      # Show a readme file with further instructions after installation
+      def show_readme
+        readme "MODEL.warning" if behavior == :invoke && class_name != 'User'
+      end
     end
   end
 end

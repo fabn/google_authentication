@@ -1,0 +1,10 @@
+
+===============================================================================
+
+*** ATTENTION!!! You have specified a model different than User ***
+
+  You should edit the google_authentication initializer to change the following
+
+    config.model_name = :your-model-name
+
+===============================================================================
