@@ -30,8 +30,9 @@ module GoogleAuthentication
       def inject_google_authentication_content
         inject_into_class(model_path, class_name) do
           return nil unless model_exists?
-          "  # You can add other devise modules here as arguments (except :database_authenticable)\n" <<
-          "  # if you do that, remember to edit the generated migration\n" <<
+          "  # You can add other devise modules here as arguments, as in devise calls. :omniauthable module is always added\n" <<
+          "  # and forbidden devise modules are automatically removed (see GoogleAuthentication::ActsAsGoogleUser::FORBIDDEN_MODULES)\n" <<
+          "  # if you change this line, remember to edit the generated migration\n" <<
           "  acts_as_google_user\n"
         end
       end
