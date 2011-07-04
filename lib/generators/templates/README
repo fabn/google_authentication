@@ -1,0 +1,11 @@
+
+What to do next?
+
+  1. Edit initializer (config/initializer/google_authentication.rb) and fill:
+     - your desired domain for authentication (default gmail.com)
+     - your model used as google user
+
+  2.a Run rails g google_authentication MODEL in order to create a default model
+  2.b (or) add acts_as_google_user to the model used for authentication
+
+===============================================================================

@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "google_authentication"
   gem.homepage = "http://github.com/fabn/google_authentication"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Authenticate users through Google in your app}
+  gem.description = %Q{Authenticate users through Google in your app using devise and omniauth}
   gem.email = "f.napoleoni@gmail.com"
   gem.authors = ["Fabio Napoleoni"]
   # dependencies defined in Gemfile
