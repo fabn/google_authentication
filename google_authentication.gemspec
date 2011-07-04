@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "features/google_authentication.feature",
     "features/step_definitions/google_authentication_steps.rb",
     "features/support/env.rb",
+    "google_authentication.gemspec",
     "lib/generators/google_authentication/google_authentication_generator.rb",
     "lib/generators/google_authentication/install_generator.rb",
     "lib/generators/templates/MODEL.warning",
