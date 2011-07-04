@@ -1,13 +1,11 @@
 
-===============================================================================
+What to do next?
 
-Some setup you must do in order to make things working
+  1. Edit initializer (config/initializer/google_authentication.rb) and fill:
+     - your desired domain for authentication (default gmail.com)
+     - your model used as google user
 
-  1. Change your devise model name in initializer if you plan to use an existing
-     model, or if you plan to generate a model with a name which is not User
-
-  2. Change your desired domain for authentication (default gmail.com)
-
-  3. Run rails g google_authentication MODEL for creating a default model
+  2.a Run rails g google_authentication MODEL in order to create a default model
+  2.b (or) add acts_as_google_user to the model used for authentication
 
 ===============================================================================
