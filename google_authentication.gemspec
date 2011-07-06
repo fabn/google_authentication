@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google_authentication}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fabio Napoleoni"]
-  s.date = %q{2011-07-04}
+  s.date = %q{2011-07-07}
   s.description = %q{Authenticate users through Google in your app using devise and omniauth}
   s.email = %q{f.napoleoni@gmail.com}
   s.extra_rdoc_files = [
@@ -111,30 +111,30 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<devise>, [">= 1.2.0"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_development_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_development_dependency(%q<generator_spec>, [">= 0"])
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
       s.add_development_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
       s.add_development_dependency(%q<cucumber>, ["~> 0.10"])
+      s.add_development_dependency(%q<aruba>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_development_dependency(%q<growl>, [">= 0"])
     else
       s.add_dependency(%q<rails>, [">= 3.0.0"])
       s.add_dependency(%q<omniauth>, [">= 0"])
       s.add_dependency(%q<devise>, [">= 1.2.0"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_dependency(%q<generator_spec>, [">= 0"])
       s.add_dependency(%q<guard-rspec>, [">= 0"])
       s.add_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_dependency(%q<yard>, [">= 0"])
       s.add_dependency(%q<cucumber>, ["~> 0.10"])
+      s.add_dependency(%q<aruba>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_dependency(%q<growl>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, [">= 3.0.0"])
@@ -142,15 +142,15 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<devise>, [">= 1.2.0"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 0"])
+    s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+    s.add_dependency(%q<generator_spec>, [">= 0"])
     s.add_dependency(%q<guard-rspec>, [">= 0"])
     s.add_dependency(%q<capybara>, [">= 0.4.0"])
     s.add_dependency(%q<yard>, [">= 0"])
     s.add_dependency(%q<cucumber>, ["~> 0.10"])
+    s.add_dependency(%q<aruba>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<rb-fsevent>, [">= 0"])
-    s.add_dependency(%q<growl>, [">= 0"])
   end
 end
 
