@@ -26,6 +26,16 @@ describe GoogleAuthentication::ActsAsGoogleUser do
 
   describe DefaultUser do
 
+    include Shoulda::Matchers::ActiveRecord
+
+    before(:all) do
+      DefaultUser.find_or_create_by_email "user@example.org" do |user|
+        user.omniauth_uid = "some-cool-omniauth-uid"
+        user.first_name = "John"
+        user.last_name = "Doe"
+      end
+    end
+
     subject { DefaultUser.new }
 
     it_should_behave_like "All Users"
@@ -37,6 +47,12 @@ describe GoogleAuthentication::ActsAsGoogleUser do
     it "should have only omniauthable module" do
       subject.class.devise_modules.should eql [:omniauthable]
     end
+
+    # shoulda specs for google_user model
+    it { should validate_presence_of :email }
+    it { should validate_presence_of :omniauth_uid }
+    it { should validate_uniqueness_of :email }
+    it { should validate_uniqueness_of :omniauth_uid }
   end
 
   describe "Users with different devise modules" do

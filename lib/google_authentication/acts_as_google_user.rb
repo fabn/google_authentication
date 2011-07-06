@@ -39,7 +39,10 @@ module GoogleAuthentication
         # include devise modules
         devise *(ActsAsGoogleUser.devise_modules_to_include)
         # Setup accessible (or protected) attributes for your model
-        attr_accessible :email
+        attr_accessible :email, :omniauth_uid
+        # Setup validation for model
+        validates_presence_of :email, :omniauth_uid
+        validates_uniqueness_of :email, :omniauth_uid
       end
 
       module ClassMethods # :nodoc:

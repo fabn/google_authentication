@@ -9,6 +9,7 @@ gem 'devise', '>= 1.2.0'
 group :development do
   gem "sqlite3"
   gem "rspec-rails"
+  gem "shoulda-matchers"
   gem "generator_spec"
   gem "guard-rspec"
   gem "capybara", ">= 0.4.0"
