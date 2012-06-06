@@ -4,6 +4,7 @@ require 'rails'
 require 'action_controller'
 
 require 'omniauth'
+require 'omniauth-google-apps'
 require 'devise'
 
 module GoogleAuthentication
@@ -13,7 +14,7 @@ module GoogleAuthentication
     # Initialize devise configuration for omniauth
     initializer "google_authentication.domain", :before => "devise.omniauth" do
       require 'openid/store/filesystem'
-      Devise.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => GoogleAuthentication.domain
+      Devise.omniauth :google_apps, :store => OpenID::Store::Filesystem.new('/tmp'), :domain => GoogleAuthentication.domain
     end
   end
 end
