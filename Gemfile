@@ -11,7 +11,7 @@ group :development do
   gem "sqlite3", '~> 1.3.5'
   gem "rspec-rails", '>= 2.9.0'
   gem "shoulda-matchers"
-  gem "generator_spec"
+  gem "generator_spec", '>= 0.8.5'
   gem "guard-rspec"
   gem "capybara", ">= 0.4.0"
   gem "yard"
