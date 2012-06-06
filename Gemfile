@@ -9,7 +9,7 @@ gem 'devise', '>= 2.0'
 # Include everything needed to run rake, tests, features, etc.
 group :development do
   gem "sqlite3", '~> 1.3.5'
-  gem "rspec-rails"
+  gem "rspec-rails", '>= 2.9.0'
   gem "shoulda-matchers"
   gem "generator_spec"
   gem "guard-rspec"
