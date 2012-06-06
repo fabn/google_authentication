@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{google_authentication}
-  s.version = "0.1.0"
+  s.name = "google_authentication"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fabio Napoleoni"]
-  s.date = %q{2011-07-04}
-  s.description = %q{Authenticate users through Google in your app using devise and omniauth}
-  s.email = %q{f.napoleoni@gmail.com}
+  s.date = "2012-06-06"
+  s.description = "Authenticate users through Google in your app using devise and omniauth"
+  s.email = "f.napoleoni@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.markdown"
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     ".rvmrc",
+    "CHANGES.markdown",
     "Gemfile",
     "Guardfile",
     "LICENSE.txt",
@@ -32,6 +33,7 @@ Gem::Specification.new do |s|
     "features/google_authentication.feature",
     "features/step_definitions/google_authentication_steps.rb",
     "features/support/env.rb",
+    "google_authentication.gemspec",
     "lib/generators/google_authentication/google_authentication_generator.rb",
     "lib/generators/google_authentication/install_generator.rb",
     "lib/generators/templates/MODEL.warning",
@@ -94,61 +96,64 @@ Gem::Specification.new do |s|
     "spec/models/acts_as_google_user_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/fabn/google_authentication}
+  s.homepage = "http://github.com/fabn/google_authentication"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Authenticate users through Google in your app}
+  s.rubygems_version = "1.8.24"
+  s.summary = "Authenticate users through Google in your app"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 3.0.0"])
-      s.add_runtime_dependency(%q<omniauth>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, [">= 1.2.0"])
-      s.add_development_dependency(%q<sqlite3>, [">= 0"])
-      s.add_development_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<rails>, [">= 3.1.0"])
+      s.add_runtime_dependency(%q<omniauth>, [">= 1.0"])
+      s.add_runtime_dependency(%q<omniauth-google-apps>, [">= 0"])
+      s.add_runtime_dependency(%q<devise>, [">= 2.0"])
+      s.add_development_dependency(%q<sqlite3>, ["~> 1.3.5"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 2.9.0"])
+      s.add_development_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_development_dependency(%q<generator_spec>, [">= 0.8.5"])
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
       s.add_development_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
       s.add_development_dependency(%q<cucumber>, ["~> 0.10"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<aruba>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_development_dependency(%q<growl>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, [">= 3.0.0"])
-      s.add_dependency(%q<omniauth>, [">= 0"])
-      s.add_dependency(%q<devise>, [">= 1.2.0"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
-      s.add_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_dependency(%q<rails>, [">= 3.1.0"])
+      s.add_dependency(%q<omniauth>, [">= 1.0"])
+      s.add_dependency(%q<omniauth-google-apps>, [">= 0"])
+      s.add_dependency(%q<devise>, [">= 2.0"])
+      s.add_dependency(%q<sqlite3>, ["~> 1.3.5"])
+      s.add_dependency(%q<rspec-rails>, [">= 2.9.0"])
+      s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_dependency(%q<generator_spec>, [">= 0.8.5"])
       s.add_dependency(%q<guard-rspec>, [">= 0"])
       s.add_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_dependency(%q<yard>, [">= 0"])
       s.add_dependency(%q<cucumber>, ["~> 0.10"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_dependency(%q<aruba>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_dependency(%q<growl>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 3.0.0"])
-    s.add_dependency(%q<omniauth>, [">= 0"])
-    s.add_dependency(%q<devise>, [">= 1.2.0"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
-    s.add_dependency(%q<rspec-rails>, [">= 0"])
+    s.add_dependency(%q<rails>, [">= 3.1.0"])
+    s.add_dependency(%q<omniauth>, [">= 1.0"])
+    s.add_dependency(%q<omniauth-google-apps>, [">= 0"])
+    s.add_dependency(%q<devise>, [">= 2.0"])
+    s.add_dependency(%q<sqlite3>, ["~> 1.3.5"])
+    s.add_dependency(%q<rspec-rails>, [">= 2.9.0"])
+    s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+    s.add_dependency(%q<generator_spec>, [">= 0.8.5"])
     s.add_dependency(%q<guard-rspec>, [">= 0"])
     s.add_dependency(%q<capybara>, [">= 0.4.0"])
     s.add_dependency(%q<yard>, [">= 0"])
     s.add_dependency(%q<cucumber>, ["~> 0.10"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+    s.add_dependency(%q<aruba>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<rb-fsevent>, [">= 0"])
-    s.add_dependency(%q<growl>, [">= 0"])
   end
 end
 
