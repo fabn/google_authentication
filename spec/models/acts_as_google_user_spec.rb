@@ -3,17 +3,17 @@ require 'spec_helper'
 describe GoogleAuthentication::ActsAsGoogleUser do
 
   class DefaultUser < ActiveRecord::Base
-    set_table_name :users
+    self.table_name =  :users
     acts_as_google_user
   end
 
   class RememberableUser < ActiveRecord::Base
-    set_table_name :users
+    self.table_name =  :users
     acts_as_google_user :rememberable
   end
 
   class ForbiddenUser < ActiveRecord::Base
-    set_table_name :users
+    self.table_name =  :users
     acts_as_google_user :database_authenticable, :recoverable
   end
 
