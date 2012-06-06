@@ -65,7 +65,7 @@ module GoogleAuthentication
         # @return [ActiveRecord::Base] an instance of the base class
         def find_or_create_by_omniauth_default_impl omniauth_data
           find_or_initialize_by_omniauth_uid(omniauth_data['uid']).tap do |user|
-            omniauth_data['user_info'].each do |k, v|
+            omniauth_data['info'].each do |k, v|
               user.send "#{k}=", v if user.respond_to? "#{k}="
             end
             user.save!
