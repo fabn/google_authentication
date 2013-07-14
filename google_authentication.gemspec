@@ -36,5 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard'
   spec.add_development_dependency 'cucumber', '~> 0.10'
   spec.add_development_dependency 'aruba'
+  spec.add_development_dependency 'appraisal'
 
 end
