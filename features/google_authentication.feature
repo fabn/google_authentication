@@ -26,8 +26,7 @@ Feature: Create a new application
     And the file "db/schema.rb" should contain "accounts"
     And the output should contain "You should edit the google_authentication initializer"
 
-  @rails3
-  Scenario: Routes configuration for rails 3.x
+  Scenario: Routes configuration for rails 3.x and 4.x
     Given I generate the model with "user" as argument
     When I successfully run `bundle exec rake routes`
     Then the output should match:

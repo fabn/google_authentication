@@ -1,6 +1,6 @@
 require 'devise'
-require 'omniauth'
 require 'google_authentication/acts_as_google_user'
+require 'google_authentication/engine'
 
 # Main module for the gem
 module GoogleAuthentication
@@ -45,6 +45,4 @@ module GoogleAuthentication
     model_name.to_s.pluralize.to_sym
   end
 
-  # require the engine if rails is defined
-  require 'google_authentication/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
 end

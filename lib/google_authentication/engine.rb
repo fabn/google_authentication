@@ -1,5 +1,3 @@
-require 'google_authentication'
-
 require 'rails'
 require 'action_controller'
 
