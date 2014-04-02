@@ -134,9 +134,6 @@ Moreover I wrote some high level integration test with [Aruba](https://github.co
 I'm using the [gitflow model](https://github.com/nvie/gitflow) to maintain this gem, so all the development stuff is in
  the develop branch, master will contain only stable code.
 
-For gem publishing and maintaining I'm using the [jeweler gem](https://github.com/technicalpickles/jeweler), so you can
- fork my project and run `bundle install` to get the required dependencies.
-
 * Check out the latest develop to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
