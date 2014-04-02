@@ -1,5 +1,7 @@
 # google_authentication with devise + omniauth
 
+[![Build Status](https://secure.travis-ci.org/fabn/google_authentication.png)](http://travis-ci.org/fabn/google_authentication) [![Gem Version](https://badge.fury.io/rb/google_authentication.svg)](http://badge.fury.io/rb/google_authentication)
+
 I found myself using Google authentication in a lot of projects (especially private projects which require google apps
 authentication). With Omniauth it's pretty simple to authenticate against Google and Devise has a lot of convenient helpers.
 
@@ -117,23 +119,10 @@ Models used in this gem may use other devise modules in a transparent way, just 
       acts_as_google_user :omniauthable, :token_authenticable, :trackable, :timeoutable, :rememberable
     end
 
-## Known issues
-
-I'm a fun of Cucumber + Rspec so I tried to test my gem with these two tools, however it is not fully tested (I had
- trouble in writing some spec for a Rails Engine) but it still has a pretty decent coverage.
-
-Moreover I wrote some high level integration test with [Aruba](https://github.com/cucumber/aruba) but I can't make them
- running. I opened [an issue on for aruba](https://github.com/cucumber/aruba/issues/77), but I'm not sure that the problem
- is with Aruba itself, it could also be related in some way with Bundler. You can clone the repo and run the features by
- yourself to see what's happening. Any fix for that is welcome...
-
 ## Contributing to google_authentication
 
 I'm using the [gitflow model](https://github.com/nvie/gitflow) to maintain this gem, so all the development stuff is in
  the develop branch, master will contain only stable code.
-
-For gem publishing and maintaining I'm using the [jeweler gem](https://github.com/technicalpickles/jeweler), so you can
- fork my project and run `bundle install` to get the required dependencies.
 
 * Check out the latest develop to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

@@ -23,7 +23,7 @@ module GoogleAuthentication
 
       # Build the migration files for the given model
       def copy_devise_migration
-        migration_template "migration.rb", "db/migrate/devise_create_#{table_name}"
+        migration_template "migration.rb", "db/migrate/devise_create_#{table_name}.rb"
       end
 
       # Insert gem activation code into the selected class
