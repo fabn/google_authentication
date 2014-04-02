@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'capybara', '>= 0.4.0'
   spec.add_development_dependency 'yard'
   spec.add_development_dependency 'cucumber'
-  spec.add_development_dependency 'aruba'
+  spec.add_development_dependency 'aruba', '~> 0.5.4'
   spec.add_development_dependency 'appraisal'
 
 end
