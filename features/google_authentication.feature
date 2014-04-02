@@ -3,11 +3,12 @@ Feature: Create a new application
   A user should create a new rails application and install the gem and run the generator
 
   Background: A new rails application has been created with google_authentication gem
-    Given a rails application named "google_app" exists
+    Given The default aruba timeout is 30 seconds
+    And a rails application named "google_app" exists
     And this gem is installed in that application
 
   Scenario: Installation using default values
-    When I successfully run `rails generate google_authentication:install`
+    When I successfully run `bundle exec rails generate google_authentication:install`
     # this is needed because rails g returns 0 when can't find the generator
     And the output should not contain "Could not find generator"
     Then a file named "config/initializers/devise.rb" should exist

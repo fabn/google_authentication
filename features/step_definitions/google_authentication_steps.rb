@@ -3,7 +3,7 @@ Given /^a rails application named "([^\"]*)" exists$/ do |app_name|
   steps %Q{
     Given I successfully run `rm -rf #{app_name}`
     And a directory named "#{app_name}" should not exist
-    And I successfully run `rails new #{app_name}`
+    And I successfully run `bundle exec rails new #{app_name}`
     And I cd to "#{app_name}"
   }
 end
@@ -18,8 +18,8 @@ end
 
 When /^I generate the model with "([^\"]*)" as argument$/ do |model_name|
   steps %Q{
-    Given I successfully run `rails generate google_authentication:install`
-    And I successfully run `rails generate google_authentication #{model_name}`
-    And I successfully run `rake db:migrate`
+    Given I successfully run `bundle exec rails generate google_authentication:install`
+    And I successfully run `bundle exec rails generate google_authentication #{model_name}`
+    And I successfully run `bundle exec rake db:migrate`
   }
 end
