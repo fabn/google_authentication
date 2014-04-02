@@ -15,12 +15,12 @@ Feature: Create a new application
     And the file "config/initializers/google_authentication.rb" should contain "# config.model_name = :user"
 
   Scenario: Installation with model generation and default values
-    When I generate the model with "" as argument
+    When I generate the model with "user" as argument
     Then the file "app/models/user.rb" should contain "acts_as_google_user"
     And the file "db/schema.rb" should contain "users"
 
   Scenario: Installation with different model name
     When I generate the model with "account" as argument
     Then the file "app/models/account.rb" should contain "acts_as_google_user"
-    And the file "config/initializers/google_authentication.rb" should contain "config.model_name = :account"
     And the file "db/schema.rb" should contain "accounts"
+    And the output should contain "You should edit the google_authentication initializer"
