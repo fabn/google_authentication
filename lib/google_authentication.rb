@@ -1,4 +1,5 @@
 require 'devise'
+require 'omniauth'
 require 'google_authentication/acts_as_google_user'
 
 # Main module for the gem
