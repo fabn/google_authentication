@@ -1,3 +1,7 @@
+## 0.3.0, released 2014-04-03
+
+* Rails 4 support
+
 ## 0.2.0, released 2012-06-06
 
 * Updated gem to work with new versions of Devise and Omniauth, currently 2.1.0 for Devise and 1.1.0 for Omniauth
