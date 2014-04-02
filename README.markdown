@@ -1,6 +1,6 @@
 # google_authentication with devise + omniauth
 
-[![Build Status](https://secure.travis-ci.org/fabn/google_authentication.png)](http://travis-ci.org/fabn/google_authentication)
+[![Build Status](https://secure.travis-ci.org/fabn/google_authentication.png)](http://travis-ci.org/fabn/google_authentication) [![Gem Version](https://badge.fury.io/rb/google_authentication.svg)](http://badge.fury.io/rb/google_authentication)
 
 I found myself using Google authentication in a lot of projects (especially private projects which require google apps
 authentication). With Omniauth it's pretty simple to authenticate against Google and Devise has a lot of convenient helpers.
