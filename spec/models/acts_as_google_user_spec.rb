@@ -3,17 +3,17 @@ require 'spec_helper'
 describe GoogleAuthentication::ActsAsGoogleUser do
 
   class DefaultUser < ActiveRecord::Base
-    self.table_name =  :users
+    self.table_name = :users
     acts_as_google_user
   end
 
   class RememberableUser < ActiveRecord::Base
-    self.table_name =  :users
+    self.table_name = :users
     acts_as_google_user :rememberable
   end
 
   class ForbiddenUser < ActiveRecord::Base
-    self.table_name =  :users
+    self.table_name = :users
     acts_as_google_user :database_authenticable, :recoverable
   end
 
@@ -29,7 +29,14 @@ describe GoogleAuthentication::ActsAsGoogleUser do
     include Shoulda::Matchers::ActiveRecord
 
     before(:all) do
-      DefaultUser.find_or_create_by(email: 'user@example.org') do |user|
+      method, args =
+          if Rails::VERSION::MAJOR == 4
+            [:find_or_create_by, {email: 'user@example.org'}]
+          else
+            # Deprecated in Rails 4
+            [:find_or_create_by_email, 'user@example.org']
+          end
+      DefaultUser.send(method, args) do |user|
         user.omniauth_uid = 'some-cool-omniauth-uid'
         user.first_name = 'John'
         user.last_name = 'Doe'
