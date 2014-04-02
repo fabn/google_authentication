@@ -119,16 +119,6 @@ Models used in this gem may use other devise modules in a transparent way, just 
       acts_as_google_user :omniauthable, :token_authenticable, :trackable, :timeoutable, :rememberable
     end
 
-## Known issues
-
-I'm a fun of Cucumber + Rspec so I tried to test my gem with these two tools, however it is not fully tested (I had
- trouble in writing some spec for a Rails Engine) but it still has a pretty decent coverage.
-
-Moreover I wrote some high level integration test with [Aruba](https://github.com/cucumber/aruba) but I can't make them
- running. I opened [an issue on for aruba](https://github.com/cucumber/aruba/issues/77), but I'm not sure that the problem
- is with Aruba itself, it could also be related in some way with Bundler. You can clone the repo and run the features by
- yourself to see what's happening. Any fix for that is welcome...
-
 ## Contributing to google_authentication
 
 I'm using the [gitflow model](https://github.com/nvie/gitflow) to maintain this gem, so all the development stuff is in
